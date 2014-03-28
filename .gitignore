@@ -4,3 +4,65 @@
 *.jar
 *.war
 *.ear
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package pkgfor;
+
+/**
+ *
+ * @author Esra Betül
+ */
+import java.util.Scanner;
+public class For {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner input= new Scanner (System.in);
+      
+        //YILDIZLARLA BAKLAVA DİLİMİ OLUŞTURMA
+        
+        int boyut; //Satır sayısını temsil etmekte
+        int i,j,k;
+        
+        System.out.printf("Kaç satırlık oluşturulacağını giriniz:");
+        boyut=input.nextInt();
+        
+        for(i=1;i<=boyut;i++) //İlk döngüde kullanıcıdan aldığımız boyuta göre şeklin kaç satır olacağını belirlemiş oluyoruz.
+        {
+            for(j=1;j<=boyut-i;j++) //Sol taraftaki boşluk sayısını hesaplatır.
+            {
+                System.out.printf(" "); //sol taraftaki boşlukları bırakmaya yarar.
+            }   
+                    for(k=1;k<=2*i-1;k++) //Bu döngü  satırlardaki yıldız sayısını(2*i-1) hesaplatır.
+                    {
+                        System.out.printf("*"); //Yıldızları çizdirir.
+                    }
+                    System.out.println(); //Yıldızlar çizdirildikten sonra bir alt satıra geçmeye yardımcıdır.               
+        }
+        
+        //Yukarıdaki döngü kalıbının aynısını aşağıya yazıyoruz. Sadece ilk döngüyü değiştiriyoruz.
+        //Çünkü ilk döngüde boşluk sayısını git gide arttırmamız gerekirken şekil dolayısıyla şimdi ise azaltmamız gerekmektedir.
+         for(i=boyut-1;i>0;i--) //Eğer -1(i=boyut-1) demezsek girdiğiniz boyuta göre tam orta satırdaki yıldızlardan bir tane daha oluşturduktan sonra azaltmaya başlar.
+        {
+            for(j=1;j<=boyut-i;j++) //Sol taraftaki boşluk sayısını hesaplatır.
+            {
+                System.out.printf(" "); //sol taraftaki boşlukları bırakmaya yarar.
+            }   
+                    for(k=1;k<=2*i-1;k++) //Bu döngü  satırlardaki yıldız sayısını(2*i-1) hesaplatır.
+                    {
+                        System.out.printf("*"); //Yıldızları çizdirir.
+                    }
+                    System.out.println(); //Yıldızlar çizdirildikten sonra bir alt satıra geçmeye yardımcıdır.               
+        }
+        
+    }
+}
